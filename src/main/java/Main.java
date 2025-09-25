@@ -20,9 +20,18 @@ public class Main {
                 "Multiply\n" +
                 "Divide");
         String calculation = myScanner.nextLine();
-        System.out.printf("You've picked " + calculation +"\n");
 
-        int total = firstNum * secondNum;
-        System.out.println(firstNum + " multiplied by " + secondNum + " is: " + total);
+        if (calculation.equalsIgnoreCase("Multiply")) {
+            int total = firstNum * secondNum;
+            System.out.printf("%d multiplied by %d is %d", firstNum, secondNum, total);
+        } else {
+            System.err.println("Invalid option. Please choose Multiply this time.");
+            calculation = myScanner.nextLine();
+            if(calculation.equalsIgnoreCase("Multiply")) {
+                int total = firstNum * secondNum;
+                System.out.printf("%d multiplied by %d is %d", firstNum, secondNum, total);
+            }
+
+        }
     }
 }
